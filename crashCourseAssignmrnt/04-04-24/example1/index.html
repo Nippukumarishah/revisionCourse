@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+
+        }
+        h2{
+            margin-top: 50px;
+            font-size: 30px;
+            font-family: sans-serif;
+            font-weight: 550;
+            color: tomato;
+        }
+        #root{
+            margin-top: 20px;
+        }
+        input{
+            padding: 10px;
+            margin: 20px;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+        button{
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Mini Calculator Application</h2>
+    <div class="" id="root">
+        <input type="number" placeholder="Enter 1st Number" id="input1st">
+        <input type="number" placeholder="Enter 2nd Number" id="input2nd">
+        <br><br>
+
+        <button class="addBtn" onclick="add()">Add</button>
+        <button class="subBtn" onclick="sub()">Subtract</button>
+        <button class="mulBtn" onclick="mul()">Multiply</button>
+        <button class="divBtn" onclick="div()">Divided</button>
+    </div>
+    
+</body>
+<script>
+   
+    let input1 = document.getElementById("input1st");
+    let input2 = document.getElementById("input2nd");
+
+    function add(){
+        let addition = (+input1.value)+(+input2.value);
+        alert(addition)
+    }
+    function sub(){
+        let sub = (+input1.value)-(+input2.value);
+        alert(sub)
+    }
+    function mul(){
+        let multiply = (+input1.value)*(+input2.value);
+        alert(multiply)
+    }
+    function div(){
+        let divided = (+input1.value)/(+input2.value);
+        alert(divided)
+    }
+
+   
+
+</script>
+</html>

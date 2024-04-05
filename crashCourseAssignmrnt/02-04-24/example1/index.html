@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// Problem 5: Write a function to replace spaces in a given string with - .
+
+// statement : "The quick brown fox jumps over the lazy dog"
+function charSpace(str){
+let bag = "";
+for(let i = 0; i<str.length; i++){
+    if(str[i] == " "){
+        bag = bag + "-";
+    }
+    else{
+        bag = bag + str[i];
+    }
+}
+console.log(bag);
+}
+charSpace("The quick brown fox jumps over the lazy dog")
+
+
+</script>
+</html>

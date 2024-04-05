@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flex</title>
+    <style>
+        *{
+            text-align: center;
+            font-family:Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+        h2{
+            font-size: 29px;
+        }
+        .container{
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+            width: 62%;
+            border-radius: 10px;
+            background-color: rgb(247,247,255);
+        }
+        .container-hire{
+            width: 43%;
+            margin: 12px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .container-hire>img{
+            margin-top: 10px;
+        }
+        .container-hire>p{
+            font-size: 17px;
+            color:rgb(128,123,124);
+        }
+        .container-hire>.cont{
+            font-size: 17px;
+            color:rgb(96, 98, 185) ;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hiring Facts</h2>
+    <div class="container">
+        <div class="container-hire">
+            <img src="https://www.masaischool.com/images/hire-masai-grads/HiringFacts/hiring-facts-1.svg" alt="">
+            <p>Hiring Process</p>
+            <p class="cont">< 3 Days</p>
+        </div>
+        <div class="container-hire">
+            <img src="https://www.masaischool.com/images/hire-masai-grads/HiringFacts/hiring-facts-2.svg" alt="">
+            <p>Offer Acceptance</p>
+            <p class="cont">90%</p>
+        </div>
+        <div class="container-hire">
+            <img src="https://www.masaischool.com/images/hire-masai-grads/HiringFacts/hiring-facts-3.svg" alt="">
+            <p>Retention Rate</p>
+            <p class="cont">93%</p>
+        </div>
+        <div class="container-hire">
+            <img src="https://www.masaischool.com/images/hire-masai-grads/HiringFacts/hiring-facts-4.svg" alt="">
+            <p>Hiring Partners</p>
+            <p class="cont">4000+</p>
+        </div>
+        <div class="container-hire">
+            <img src="https://www.masaischool.com/images/hire-masai-grads/HiringFacts/hiring-facts-5.svg" alt="">
+            <p>Year Round Availability</p>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
