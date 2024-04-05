@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Investor(DOM)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        #parent{
+                height: auto;
+                width: 90%;
+                margin: auto;
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                grid-template-rows: repeat(5,1fr);
+                gap: 15px 15px;
+                padding-left: 2%;
+                padding-top: 1%;
+                
+            }
+            #parent  #avator{
+                width: 100%;
+                border-radius: 10px;
+            }
+            #child{
+                margin-top: 30px;
+                height: 400px;
+                border-radius: 10px;
+                width: 85%;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+            #avator{
+                width: 262px;
+                height: 268px;
+                background-color: grey;
+                padding-top: 2%;
+                cursor: pointer;
+
+            }
+            #logo{
+                width: 140px;
+                height: 48px;
+                display: block;
+                margin: 0 auto;
+                cursor: pointer;   
+            }
+            #sam{
+                text-align: center;
+                font-size: 20px;
+                font-family: "Open Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                cursor: pointer;
+            }
+            #ram{
+                text-align: center;
+                font-family: "Open Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                font-size: 20px;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+  <h2>Strategic Investors</h2>
+    <div id="parent">
+
+    </div>
+    
+</body>
+<script>
+    let data = [
+
+{
+  title : "Vijay Shekhar Sharma ",
+  description : "Founder & CEO",
+  img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+  logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+},
+{
+  title : "Kunal Shah",
+  description : "Founder",
+  img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+  logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+},
+{
+  title : "Amrish Rau",
+  description : "CEO",
+  img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",
+  logo : "https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png"
+},
+{
+  title : "Sampad Swain",
+  description : "Co-Founder & CEO",
+  img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",
+  logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"
+},
+{
+  title : "Ankush Sachdeva",
+  description : "Co-Founder & CEO",
+  img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Ankush_Sachdeva_Sharechat_4e44dbbe6b.jpg",
+  logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/sharechat_rect_73d95cd4e1.svg"
+},
+{
+  title : "Bhanu Pratap Singh",
+  description : "Co-Founder & CTO",
+  img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/bhanu_pratap_singh_sharechat_11fdd7b47a.jpg",
+  logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/sharechat_rect_73d95cd4e1.svg"
+},
+{
+  title : "fARID Ahsan",
+  description : "Co-Founder & COO",
+  img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/farid_ahsan_sharechat_1251f28141.png",
+  logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/sharechat_rect_73d95cd4e1.svg"
+},
+{
+  title : "Amit Kumar Agarwal",
+  description : "Founder & CEO",
+  img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Amit_Kumar_Agarwal_Nobroker_a8a279ad91.jpg",
+  logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/nobroker_rect_28c9778c30.svg"
+},
+{
+  title : "Akhil Gupta",
+  description : "Founder & CTO",
+  img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Akhil_Gupta_Nobroker_539cd97f6c.jpg",
+  logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/nobroker_rect_28c9778c30.svg"
+},
+{
+  title : "Saurabh Garg",
+  description : "Co-Founder & CBO",
+  img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/saurbh_garg_nobroker_c0c71cc431.jpeg",
+  logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/nobroker_rect_28c9778c30.svg"
+},
+{
+  title : "Vipin Pathak",
+  description : "Co-Founder & CEO",
+  img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vipin_Pathak_Care24_acd02cd173.jpg",
+  logo : "https://masai-website-images.s3.ap-south-1.amazonaws.com/care24_1164f7a2cd.png"
+},
+]
+let parentDiv = document.getElementById("parent");
+
+data.forEach(function(ele, i){
+ 
+  let childDiv = document.createElement("div");
+  childDiv.id = "child"
+  let imgTag = document.createElement("img")
+  imgTag.src = ele.img
+  imgTag.id = "avator"
+  let nameTag = document.createElement("h3")
+  nameTag.innerText = ele.title
+  nameTag.id = "sam"
+  let founder = document.createElement("p")
+  founder.innerText = ele.description
+  founder.id = "ram"
+  let logoImg = document.createElement("img")
+  logoImg.src = ele.logo
+  logoImg.id = "logo"
+
+  childDiv.append(imgTag,nameTag,founder,logoImg)
+  parentDiv.append(childDiv)
+})
+
+
+</script>
+</html>
