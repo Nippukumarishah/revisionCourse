@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Bootstrap CSS -->
+   <link
+   href= 
+"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+   rel="stylesheet"
+   integrity= 
+"sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+   crossorigin="anonymous"
+ /> 
+ <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"/>
+ <link rel="stylesheet"
+       href="styleCss/index.css" /> 
+       <link rel="stylesheet" href="styleCss/cart.css">
+ <link rel="preconnect" 
+       href="https://fonts.gstatic.com" /> 
+ <link
+   href= 
+"https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+   rel="stylesheet"
+ /> 
+    <title>Buy Beauty Products at SUGAR Cosmetics and Products</title>
+    <link rel="icon" type="image/x-icon" href="https://1000logos.net/wp-content/uploads/2020/07/SUGAR-Cosmetics-Logo1.jpg">
+<link rel="stylesheet" href="index.css">
+    
+   </head>
+<body>
+   <header>
+      <div id="navbar">
+         <div class="navContainer">
+            <div>
+               <a href="index.html"><img src="https://in.sugarcosmetics.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FNonCVLogoDesktop.86874a45.png&w=256&q=100" alt="logo" id="image1"></a>
+            </div>
+            <div class="inpSearch">
+               <input type="text" placeholder=" Try 'Liquid Lipstick' "> <button> Search</button>
+            </div>
+            
+
+            <div class="login_btn">
+               <img
+                 src="https://t4.ftcdn.net/jpg/00/65/77/27/240_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"
+                 alt=""
+               />
+     
+               <div onclick="window.location.href='login.html'">LOGIN/</div>
+               <div onclick="window.location.href='signup.html'">Register</div>
+     
+              
+             </div>
+
+
+            <div class="all">
+               
+                  <img id="wishlist"
+              src="https://cdn-icons-png.flaticon.com/128/1077/1077086.png"
+              alt="wishlist"
+              placeholder="Wishlist"
+            />
+              
+              
+               <img  id="cart"
+               src="https://cdn-icons-png.flaticon.com/512/726/726564.png"
+               alt="cart"
+               placeholder="cart"
+             />
+
+             <img id="discount"
+              src="https://cdn-icons-png.flaticon.com/512/879/879859.png"
+              alt="discount"
+              placeholder="Discount"
+            />
+           
+          
+         </div>
+      </div>
+   </header>
+   <nav>
+      
+         <div class="navbar-list">
+            <ul>
+               <li><a href="makeup.html" class="nav_link">LIPS</a>
+                 
+               </li>
+               <li class="nav_link">EYES</li>
+               <li class="nav_link">FACE</li>
+               <li class="nav_link">NAILS</li>
+               <li class="nav_link">SKINCARE</li>
+               <li><a href="brush.html" class="nav_link">ACCESSORIES</a>
+                  
+               </li>
+               <li><a href="gift.html" class="nav_link">GIFTING</a>
+                  
+               </li>
+               <li class="nav_link">BESTSELLERS</li>
+               <li class="nav_link">NEW LAUNCHES</li>
+               <li class="nav_link">OFFERS</li>
+               <li><a href="blog.html" class="nav_link">BLOG</a>
+                  
+               </li>
+            </ul>
+           
+
+            </div>
+         </div>
+      </div>
+   </nav>
+
+
+
+
+ <!---------- Cart Page Start ------------->
+ <div class="icon-div">
+    <p class="icon">
+      <a href="index.html" class="btn"><i class="fa fa-home"></i></a> / <span> <a href="Personalinfo.html">Acount</a></span> /  
+      <span> <a href="wishlist.html">Wishlist</a></span>
+    </p><br>
+    <p class="icon">
+      <a href="index.html" class="btn"><i class="fa fa-user"></i></a> / <span class="name"></span> 
+      <span class="name"></span> <span> <a href="login.html.html"></a></span>
+    </p>
+    
+  </div>
+
+
+  <!-- left Portion -->
+  <div id="cart-container">
+
+      <!-- Left Box -->
+      <div class="cart-left">
+          <div class="cart_order_summary">
+              <div class="smry-box">
+                  <div class="smry-disp">
+                      <div class="smry-logo">
+                          <img src="https://in.sugarcosmetics.com/desc-images/shopping_cart.svg" width="20px" height="20px" class="" alt="Cart Logo">
+                      </div>
+                      <div class="smry-txt">Order Summary</div>
+                  </div>
+                  <div class="smry-cart-total" id="total">Card Total : 0</div>
+              </div>
+              <div class="cart-product">
+                  <div>
+                      
+                  </div>
+                  
+                  <div class="product-spec"></div>
+              </div>
+          </div>
+      </div>
+      <!-- Right Box -->
+      <div class="cart-right">
+        <div class="UserInfo">
+          <div class="rt-same">
+            <img src="https://in.sugarcosmetics.com/desc-images/CustomerInformation.svg" alt="logo">
+            <p>Contact Information</p> 
+          </div>
+          <div class="fname-phno">
+            <div class="fname">
+              <p>First Name : Ishika Gupta</p>
+            </div>
+            <div class="usrPhno">
+              <p>Phone No : 8972613378</p>
+            </div>
+          </div>
+          <div class="rt-same">
+            <p>Email: gishika93@gmail.com </p> 
+          </div>
+        </div>
+        <div class="rt-same">
+          <img src="https://in.sugarcosmetics.com/desc-images/Offers_price_details.svg" alt=" logo">
+          <p>Offers and Price Details</p> 
+        </div>
+        <div class="rt-same">
+          <img src="https://in.sugarcosmetics.com/desc-images/Offers_icon.svg" alt="Offer icon">
+          <p>Apply "masai30" to get 30% off</p> 
+        </div>
+        <div class="discount-txt">
+          <div class="rt-same">
+            <img src="https://in.sugarcosmetics.com/desc-images/GiftCard.svg" alt="Offer icon">
+            <p>Discount Code:</p> 
+          </div>
+          </div discount-aply>
+          <form>
+            <input type="text" id="coupon" placeholder="Enter Coupon" />
+            <input type="submit" id="coupn-apply" value="Apply">
+          </form>
+          <h3 class="invalid-coupon"></h3>
+          <h3 class="valid-coupon"></h3>
+          
+          <div class="rt-same">
+            <img src="https://in.sugarcosmetics.com/desc-images/PriceDetails.svg" alt="icon">
+            <p>Price Details</p> 
+          </div>
+
+          <div class="price-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td >Cart Sub Total</td>
+                        <td id="cart-total"></td>
+                    </tr>
+                    <tr>
+                        <td>Shipping Cost:</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Discount Applied:</td>
+                        <td id="disc-applied"></td>
+                    </tr>
+                    <tr>
+                        <td >Amount Payable:</td>
+                        <td id="pay-amount"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="checkout-btn">
+                <button id="checkOut">Proceed To Payment</button>
+            </div>
+        </div>
+
+        </div>
+      </div>
+  </div>
+
+
+
+    <!---- footer ---->
+    <div class="footerTag">
+        <div id="footer">
+         <img src="https://in.sugarcosmetics.com/Footer_sugar_icon.png" alt="" />
+         <div id="media">
+           <i class="fa-brands fa-facebook-f"></i>
+           <i class="fa-solid fa-envelope"></i>
+           <i class="fa-brands fa-instagram"></i>
+           <i class="fa-brands fa-pinterest"></i>
+           <i class="fa-brands fa-tumblr"></i>
+           <i class="fa-brands fa-youtube"></i>
+           <i class="fa-brands fa-twitter"></i>
+   
+         </div>
+   
+         <hr>
+   
+         <div class="stage2">
+           
+            <div class="info">
+              <div>Stores</div>
+              <div>Elite</div>
+              <div>Terms & Conditions</div>
+              <div>Returns</div>
+              <div>FAQs</div>
+              <div>About Us</div>
+            </div>
+          </div>
+          <hr>
+   
+          <div class="stage3">
+            <p>GET IN TOUCH</p>
+            <div class="cont">
+              <div>
+                <p>Call us at</p>
+                <p>1800-209-9933</p>
+                <p>Monday to Friday : 09:00 AM-07:00 PM</p>
+                <p>Saturday: 09:00AM-07:00 PM</p>
+              </div>
+              <div>
+                <p>Support</p>
+                <p>hello@sugarcosmetics.com</p>
+              </div>
+              <div>
+                <p>Careers</p>
+                <p>We're hiring!</p>
+              </div>
+              <div>
+                <p>PRESS & MEDIA</p>
+                <p>pr@sugarcosmetics.com</p>
+              </div>
+              <div>
+                <p>INFLUENCER COLLAB</p>
+                <p>JOIN US</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+         
+               <div class="stores">
+                 <div>
+                  <h5>GET THE NEW SUGAR APP TODAY!</h5>
+                  <p>Tap into a better shopping experience.</p></div>
+                 <img
+                   src="https://in.sugarcosmetics.com/playstore.png"
+                   alt="error"
+                 />
+                 <img
+                   src="https://in.sugarcosmetics.com/apple-store.png"
+                   alt="error"
+                 />
+               </div>
+             </div>
+           </div>
+           <hr>
+           
+           
+         <div class="copy">
+           <p>Copyright © 2022 SUGAR Cosmetics. All rights reserved.</p>
+         </div>
+       </div>
+      </div>
+       
+   </body>
+   <script src="scriptJs/cart.js"></script>
+   </html>

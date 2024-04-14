@@ -19,7 +19,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"/>
  <link rel="stylesheet"
-       href="style.css" /> 
+       href="styleCss/index.css" /> 
  <link rel="preconnect" 
        href="https://fonts.gstatic.com" /> 
  <link
@@ -29,370 +29,8 @@
  /> 
     <title>Buy Beauty Products at SUGAR Cosmetics and Products</title>
     <link rel="icon" type="image/x-icon" href="https://1000logos.net/wp-content/uploads/2020/07/SUGAR-Cosmetics-Logo1.jpg">
-
-    <style>
-      *{
-         margin: 0;
-         padding: 0;
-         box-sizing: border-box;
-         font-family: Roboto, sans-serif;
-         text-align: center;
-      }
-      header{
-         position: fixed;
-         top: 0;
-         width: 100%;
-      }
-      #navbar{
-        border: 1px solid ;
-         background-color: black;
-         
-         
-      }
-      .navContainer{
-         margin: 20px;
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         height: 25px;
-      
-         
-         
-      }
-      #image1{
-         margin-left: 30px;
-         width: 70%;
-      }
-      .inpSearch>input{
-         width: 55vh;
-         background-color: rgb(33,33,33);
-         border-top-left-radius: 10px;
-         border-bottom-left-radius: 10px;
-         padding: 6px;
-         border: 1px solid gray;
-         padding-left: 25px;
-      }
-     button{
-      padding: 7px;
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
-      border: none;
-      width: 70px;
-      background-color: rgb(255,255,255);
-      text-align: center;
-      color: black;
-      font-size: 15px;
-      }
-      .login-list{
-         
-         color: white;
-         display: flex;
-         justify-content: space-around;
-         width: 150px;
-         margin-left: 16px;
-         padding-right: 20px;
-         padding-left: 50px;
-      }
-      .login-list img{
-         background-color: white;
-         border-radius: 50%;
-         width: 15px;
-         height: 20px;
-         margin-top: 13px;
-         
-
-
-      }
-      .login-list p{
-         font-size: 16px;
-         margin-top: 10px;
-      }
-      .all{
-          display: flex; 
-        justify-content: space-between;
-        align-items: center;
-        width: 12%;
-         padding: 14px;
-         margin: 5px;
-         
-      }
-      .all>div{
-         background-color: white;
-         border-radius:50%;
-        width: 38px;
-        height: 28px;
-
-
-      }
-      .all .px-3{
-         width: 53px;
-         
-      }
-      nav{
-         position: fixed;
-         top: 66px;
-         width: 100%;
-      }
-      .navbar-list{
-         background-color: rgb(20,20,20);
-         color: white;
-         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-         width: 100%;
-         height: 60px;
-         padding: 20px;
-      }
-      ul{
-         
-         width: 80%;
-         display: flex;
-         justify-content: space-between;
-         height: 40px;
-      }
-      li{
-         
-         font-size: 16px;
-         text-decoration: none;
-         list-style: none;
-         
-      }
-      li:hover{
-         text-decoration: underline;
-         text-decoration-color: red;
-         text-decoration-thickness: 2px;
-         font-size: 17px;
-         cursor: pointer;
-
-      }
-      .slider_container {
-  margin-top: 113px;
-  width: 100%;
-  height: 28rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-}
-.slider {
-  position: relative;
-  width: 400%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  animation: 30s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
-}
-.slide {
-  position: relative;
-  min-width: 100%;
-  height: 100%;
-}
-.slide img {
-  width: 100%;
-  height: 100%;
-}
-.slide .caption {
-  position: absolute;
-  left: 0;
-  bottom: 5%;
-  font-size: 5rem;
-  font-weight: 600;
-  color: white;
-  text-transform: capitalize;
-  background: rgba(0, 0, 0, 0.348);
-  backdrop-filter: blur(10px);
-  padding: 1rem 5rem;
-  border-radius: 0 2rem 2rem 0;
-}
-.slide.one {
-  background: rgb(182, 19, 109);
-}
-.slide.two {
-  background: rgb(255, 64, 64);
-}
-.slide.three {
-  background: rgb(11, 173, 188);
-}
-.slide.four {
-  background: rgb(11, 188, 14);
-}
-.slide.five {
-  background: rgb(173, 11, 188);
-}
-@keyframes sliding {
-  0% {
-    transform: translateX(0%);
-  }
-  20% {
-    transform: translateX(0%);
-  }
-  25% {
-    transform: translateX(-100%);
-  }
-  45% {
-    transform: translateX(-100%);
-  }
-  50% {
-    transform: translateX(-200%);
-  }
-  70% {
-    transform: translateX(-200%);
-  }
-  75% {
-    transform: translateX(-300%);
-  }
-  95% {
-    transform: translateX(-300%);
-  }
-  100% {
-    transform: translateX(-400%);
-  }
-}
-
-.pro-div .best-sell{
-   padding-top: 50px;
-   text-align: center;
-   text-decoration: underline;
-   text-decoration-color: red;
-   text-decoration-thickness: 3px;
-   font-size: 26px;
-}
-.product-list1{
-   margin-top: 60px;
-   background-color:rgb(40,40,40) ;
-   color: white;
-  
-   height:650px;
-}
-.product-part{
-   
-   margin: auto;
-   display: flex;
-   justify-content: space-around;
-   width: 85%;
-   height: 550px;
-   padding: 20px;
-}
-.listPartOfDiv{
-   border-radius: 15px;
-   padding: 15px;
-   height: auto;
-   background-color: white;
-   color: black;
-   margin: 10px;
-}
-.listPartOfDiv img{
-   max-width: 70%;
-   max-height: 60%;
-   margin-left:15px;
-   border-radius: 20px;
-   
-}
-
-
-i{
-   border: 3px solid black;
-   border-radius: 10px;
-   width: 35px;
-   height: 35px;
-   text-align: center;
-   padding-top: 9px;
-   cursor: pointer;
-
-}
-.btn{
-   width: 80%;
-   background-color: black;
-   color: white;
-   border-radius: 5px;
-   font-size: 17px;
-   font-weight: 500;
-}
-.btn:hover{
-   color: white;
-
-}
-.exclusive{
-   margin-top: 50px;
-}
-.best-sell{
-   text-align: center;
-   text-decoration: underline;
-   text-decoration-color: red;
-   font-size: 22px;
-}
-.imageTag img{
-   margin: 25px;
-   width: 95%;
-   border-radius: 20px;
-}
-.product-list2{
-   margin-top: 60px;
-   background-color:rgb(40,40,40) ;
-   color: white;
-  
-   height:600px;
-}
-.product-part1{
-   
-   margin: auto;
-   display: flex;
-   justify-content: space-around;
-   width: 85%;
-   height: 490px;
-   padding: 20px;
-}
-.pro-div1 .best-sell{
-   padding-top: 50px;
-   text-align: center;
-   text-decoration: underline;
-   text-decoration-color: red;
-   text-decoration-thickness: 3px;
-   font-size: 26px;
-}
-.listPartOfDiv1{
-   border-radius: 15px;
-   padding: 15px;
-   height: auto;
-   background-color: white;
-   color: black;
-   margin: 10px;
-}
-.listPartOfDiv1 img{
-   max-width: 70%;
-   max-height: 70%;
-   margin-left:15px;
-   border-radius: 20px;
-   
-}
-.hotDeal{
-   
-   width: 100%;
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   margin: auto;
-   
-   
-}
-.imageTag2{
-   
-   
-  margin: 10px;
-  padding: 10px;
- 
-  
-}
-.imageTag2 img{
-   width: 100%;
-   margin-top: 20px;
-   border-radius: 15px;
-}
-
-
-
-
-    </style>
+<link rel="stylesheet" href="index.css">
+    
    </head>
 <body>
    <header>
@@ -404,27 +42,43 @@ i{
             <div class="inpSearch">
                <input type="text" placeholder=" Try 'Liquid Lipstick' "> <button> Search</button>
             </div>
-            <div class="login-list">
-               <img src="https://in.sugarcosmetics.com/desc-images/person.png" alt="">
-               <p>Login/Register</p>
-            </div>
+            
+
+            <div class="login_btn">
+               <img
+                 src="https://t4.ftcdn.net/jpg/00/65/77/27/240_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"
+                 alt=""
+               />
+     
+               <div onclick="window.location.href='login.html'">LOGIN/</div>
+               <div onclick="window.location.href='signup.html'">Register</div>
+     
+              
+             </div>
+
+
             <div class="all">
-               <div class="px-1"><svg class="MuiSvgIcon-root cursor" focusable="false" viewBox="0 0 24 24"
-                  aria-hidden="true" style="font-size: 20px; color: rgb(73, 80, 87);">
-                  <path
-                      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+               
+                  <img id="wishlist"
+              src="https://cdn-icons-png.flaticon.com/128/1077/1077086.png"
+              alt="wishlist"
+              placeholder="Wishlist"
+            />
+              
+              
+               <img  id="cart"
+               src="https://cdn-icons-png.flaticon.com/512/726/726564.png"
+               alt="cart"
+               placeholder="cart"
+             />
 
-                  </path>
-              </svg></div>
-              <div  class="px-2" style="position: relative;"><svg class="MuiSvgIcon-root" focusable="false"
-               viewBox="0 0 24 24" aria-hidden="true" style="font-size: 20px; color: rgb(73, 80, 87);" >
-             <path 
-               d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 10c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z" >
-
-           </path> 
-           </svg></div>
-           <div><img class="px-3" src="https://in.sugarcosmetics.com/desc-images/discountIcon.svg" alt="" ></div>
-            </div>
+             <img id="discount"
+              src="https://cdn-icons-png.flaticon.com/512/879/879859.png"
+              alt="discount"
+              placeholder="Discount"
+            />
+           
+          
          </div>
       </div>
    </header>
@@ -432,17 +86,25 @@ i{
       
          <div class="navbar-list">
             <ul>
-               <li>LIPS</li>
-               <li>EYES</li>
-               <li>FACE</li>
-               <li>NAILS</li>
-               <li>SKINCARE</li>
-               <li>ACCESSORIES</li>
-               <li>GIFTING</li>
-               <li>BESTSELLERS</li>
-               <li>NEW LAUNCHES</li>
-               <li>OFFERS</li>
-               <li>BLOG</li>
+               <li><a href="makeup.html" class="nav_link">LIPS</a>
+                 
+               </li>
+               <li ><a href="makeup.html" class="nav_link">EYES</a></li>
+               <li ><a href="makeup.html" class="nav_link">FACE</a></li>
+               <li class="nav_link">NAILS</li>
+               <li ><a href="makeup.html" class="nav_link">SKINCARE</a></li>
+               <li><a href="brush.html" class="nav_link">ACCESSORIES</a>
+                  
+               </li>
+               <li><a href="gift.html" class="nav_link">GIFTING</a>
+                  
+               </li>
+               <li class="nav_link">BESTSELLERS</li>
+               <li class="nav_link">NEW LAUNCHES</li>
+               <li ><a href="offer.html" class="nav_link">OFFERS</a></li>
+               <li><a href="blog.html" class="nav_link">BLOG</a>
+                  
+               </li>
             </ul>
            
 
@@ -474,6 +136,14 @@ i{
           <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2Ff2f896f0-0134-446d-b9ad-b35d2fe5267d.jpg&w=1920&q=75" alt="" />
           
         </div>
+
+        <div style="text-align:center; background-color: #f8f9fa; padding:10px;">
+         <span class="dot"></span> 
+         <span class="dot"></span> 
+         <span class="dot"></span> 
+         <span class="dot"></span> 
+         <span class="dot"></span> 
+       </div>
         
        
       </section>
@@ -488,16 +158,16 @@ i{
                <p>Matte As Hell Crayon Lipstick Minis Sets oF 3</p>
                <p>₹999 MRP <s>₹1799</s></p>
                <p>₹799</p>
-               <i class="fa-regular fa-heart"></i>
-                <button class="btn">CHOOSE ITEMS</button>
+               <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                <button class="btn" onclick="window.location.href='cartPage.html'">CHOOSE ITEMS</button>
             </div>
             <div class="listPartOfDiv">
                <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2FWBG2_aed576d3-066c-42e7-b45b-ecdefb75ad5f.jpg%3Fv%3D1708867229&w=256&q=75" alt="">
                <p>Smudge Me Not Mini Liquid<br> Lipstick Set Of 4 - Power Up Your...</p>
                <p>₹799 MRP <s>₹999</s></p>
                <p>₹639</p>
-               <i class="fa-regular fa-heart"></i>
-                <button class="btn">CHOOSE ITEMS</button>
+               <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                <button class="btn" onclick="window.location.href='cartPage.html'">CHOOSE ITEMS</button>
             </div>
             <div class="listPartOfDiv">
                <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2F07_6fa35950-4830-4e97-80ea-d40f2fb42801.jpg%3Fv%3D1680622820&w=256&q=75" alt="">
@@ -506,8 +176,8 @@ i{
                <p>₹999</p>
                <p>₹799</p>
 
-               <i class="fa-regular fa-heart"></i>
-                <button class="btn">SELECT SHADE</button>
+               <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                <button class="btn" onclick="window.location.href='cartPage.html'">SELECT SHADE</button>
             </div>
             <div class="listPartOfDiv">
                <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2F521737983-parent-1st-card.jpg%3Fv%3D1690905085&w=256&q=75" alt="">
@@ -515,8 +185,8 @@ i{
                <p>3 shades</p>
                <p>₹699</p>
                <p>₹559</p>
-               <i class="fa-regular fa-heart"></i>
-                <button class="btn">SELECT SHADE</button>
+               <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                <button class="btn" onclick="window.location.href='cartPage.html'">SELECT SHADE</button>
             </div>
 
             
@@ -540,16 +210,16 @@ i{
                <p>Vineeta's Favourite Makeup Kit </p>
                <p>₹2999 MRP <s>₹3894</s></p>
                <p>₹2399</p>
-               <i class="fa-regular fa-heart"></i>
-                <button class="btn">CHOOSE ITEMS</button>
+               <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                <button class="btn" onclick="window.location.href='cartPage.html'">CHOOSE ITEMS</button>
             </div>
             <div class="listPartOfDiv">
                <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2FNude-Edition-Makeup-Kit---WBG_1.jpg%3Fv%3D1690905055&w=256&q=75" alt="">
                <p>Nude Edition Makeup Kit</p>
                <p>₹1499 MRP <s>₹1996</s></p>
                <p>₹1199</p>
-               <i class="fa-regular fa-heart"></i>
-                <button class="btn">CHOOSE ITEMS</button>
+               <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                <button class="btn" onclick="window.location.href='cartPage.html'">CHOOSE ITEMS</button>
             </div>
             <div class="listPartOfDiv">
                <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2FDateNightMakeupkit-1.jpg%3Fv%3D1695397255&w=256&q=75" alt="">
@@ -558,8 +228,8 @@ i{
                <p>₹1599 MRP <s>₹2193</s></p>
                <p>₹1279</p>
 
-               <i class="fa-regular fa-heart"></i>
-                <button class="btn">CHOOSE ITEMS</button>
+               <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                <button class="btn" onclick="window.location.href='cartPage.html'">CHOOSE ITEMS</button>
             </div>
             <div class="listPartOfDiv">
                <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2Fcombo-image.jpg%3Fv%3D1636991116&w=256&q=75" alt="">
@@ -567,8 +237,8 @@ i{
                
                <p>₹699 MRP <s>₹1146</s></p>
                <p>₹719</p>
-               <i class="fa-regular fa-heart"></i>
-                <button class="btn">CHOOSE ITEMS</button>
+               <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                <button class="btn" onclick="window.location.href='cartPage.html'">CHOOSE ITEMS</button>
             </div>
 
             
@@ -576,6 +246,81 @@ i{
       </div>
      </div>
 
+     <div class="exclusive">
+      <h4 class="best-sell">PRODUCT OF THE MONTH</h4>
+      <div class="imageTag">
+         <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F1c2c3779-4905-4dc5-b46e-3c1daf06a466.jpg&w=1920&q=75" alt="">
+      </div>
+      
+     </div>
+
+
+     <div class="third_box">
+      <h2>MATTE ATTACK TRANSFERPROOF LIPSTICK</h2>
+      <div class="third_box_video_div">
+         
+          <iframe width="1200"
+           height="400" 
+           src="https://www.youtube.com/embed/0RxbcWhviig" 
+           title="Introducing Matte Attack Transferproof Lipstick | SUGAR Cosmetics" 
+           frameborder="0" 
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+         </iframe>
+      
+      </div>
+  </div>
+
+     
+     
+
+    
+     <div class="product-list2">
+      <div class="pro-div1">
+         <h4 class="best-sell">MATTE ATTACK COMBOS FOR YOU</h4>
+         <div class="product-part1">
+            <div class="listPartOfDiv1">
+               <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2F1_e241e84d-810a-46ab-abe9-c50f157061a8.jpg%3Fv%3D1680367311&w=256&q=75" alt="">
+               <p>Mousse Muse Lip Cream </p>
+               <p>8 shades</p>
+               <p>₹2999 MRP <s>₹3894</s></p>
+               <p>₹2399</p>
+               <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                <button class="btn" onclick="window.location.href='cartPage.html'">CHOOSE ITEMS</button>
+            </div>
+            <div class="listPartOfDiv">
+               <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2F464576762-launch_sugar-la-la-love-18hr-liquid-lipstick-wbg-powered-by-images_01.jpg%3Fv%3D1688227587&w=256&q=75" alt="">
+               <p>Nude Edition Makeup Kit</p>
+               <p>₹1499 MRP <s>₹1996</s></p>
+               <p>₹1199</p>
+               <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                <button class="btn" onclick="window.location.href='cartPage.html'">CHOOSE ITEMS</button>
+            </div>
+            <div class="listPartOfDiv">
+               <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2FVday-Kit---Powered-by-images-_design__1.jpg%3Fv%3D1708443925&w=256&q=75" alt="">
+               <p>Date Night Makeup Kit</p>
+               
+               <p>₹1599 MRP <s>₹2193</s></p>
+               <p>₹1279</p>
+
+               <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                <button class="btn" onclick="window.location.href='cartPage.html'">CHOOSE ITEMS</button>
+            </div>
+            <div class="listPartOfDiv">
+               <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2FSibling-Love-Limited-Edition-Gift-Set---WBG.jpg%3Fv%3D1700063053&w=256&q=75" alt="">
+               <p class="paraDetails">4-in-1 Makeup Set</p>
+               
+               <p>₹699 MRP <s>₹1146</s></p>
+               <p>₹719</p>
+               <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                <button class="btn" onclick="window.location.href='cartPage.html'">CHOOSE ITEMS</button>
+            </div>
+
+            
+         </div>
+      </div>
+     </div>
      <div class="exclusive">
       <h4 class="best-sell">REFER YOUR FRIENDS</h4>
       <div class="imageTag">
@@ -601,51 +346,200 @@ i{
       </div>
    </div>
      </div>
-     <div class="product-list2">
-      <div class="pro-div1">
-         <h4 class="best-sell">CURATED KITS FOR YOU</h4>
-         <div class="product-part1">
-            <div class="listPartOfDiv1">
-               <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2F1_e241e84d-810a-46ab-abe9-c50f157061a8.jpg%3Fv%3D1680367311&w=256&q=75" alt="">
-               <p>Mousse Muse Lip Cream </p>
-               <p>8 shades</p>
-               <p>₹2999 MRP <s>₹3894</s></p>
-               <p>₹2399</p>
-               <i class="fa-regular fa-heart"></i>
-                <button class="btn">CHOOSE ITEMS</button>
-            </div>
-            <div class="listPartOfDiv">
-               <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2F464576762-launch_sugar-la-la-love-18hr-liquid-lipstick-wbg-powered-by-images_01.jpg%3Fv%3D1688227587&w=256&q=75" alt="">
-               <p>Nude Edition Makeup Kit</p>
-               <p>₹1499 MRP <s>₹1996</s></p>
-               <p>₹1199</p>
-               <i class="fa-regular fa-heart"></i>
-                <button class="btn">CHOOSE ITEMS</button>
-            </div>
-            <div class="listPartOfDiv">
-               <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2FVday-Kit---Powered-by-images-_design__1.jpg%3Fv%3D1708443925&w=256&q=75" alt="">
-               <p>Date Night Makeup Kit</p>
-               
-               <p>₹1599 MRP <s>₹2193</s></p>
-               <p>₹1279</p>
 
-               <i class="fa-regular fa-heart"></i>
-                <button class="btn">CHOOSE ITEMS</button>
-            </div>
-            <div class="listPartOfDiv">
-               <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2FSibling-Love-Limited-Edition-Gift-Set---WBG.jpg%3Fv%3D1700063053&w=256&q=75" alt="">
-               <p class="paraDetails">4-in-1 Makeup Set</p>
-               
-               <p>₹699 MRP <s>₹1146</s></p>
-               <p>₹719</p>
-               <i class="fa-regular fa-heart"></i>
-                <button class="btn">CHOOSE ITEMS</button>
-            </div>
 
-            
+     <div class="exclusive">
+      <h4 class="best-sell">TOP PICKS OF THE WEEK</h4>
+         <div class="hotDeal">
+         <div class="imageTag2">
+            <img src="https://in.sugarcosmetics.com/_next/image?url=https://d32baadbbpueqt.cloudfront.net/Homepage/c84926c4-8914-484e-8ad5-649fd1980d1f.jpg&w=1920&q=75" alt="">
+         </div>
+         <div class="imageTag2">
+            <img src="https://in.sugarcosmetics.com/_next/image?url=https://d32baadbbpueqt.cloudfront.net/Homepage/cd5c828f-a59f-4342-8955-25c7a9f7c70d.jpg&w=1920&q=75" alt="">
+         </div>
+         <div class="imageTag2">
+            <img src="https://in.sugarcosmetics.com/_next/image?url=https://d32baadbbpueqt.cloudfront.net/Homepage/8b810378-baea-4a92-a85d-2e4412ad5c4b.jpg&w=1920&q=75" alt="">
+         </div>
+         <div class="imageTag2">
+            <img src="https://d32baadbbpueqt.cloudfront.net/Homepage/b185408c-0721-47e5-8dc4-549c19759a52.gif" alt="">
          </div>
       </div>
+        </div>
+
+        <div class="product-list2">
+         <div class="pro-div1">
+            <h4 class="best-sell">SUPER SAVERS</h4>
+            <div class="product-part1">
+               <div class="listPartOfDiv1">
+                  <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2FRageForCoveragePDPImagesparent1stcard.jpg%3Fv%3D1685636215&w=256&q=75" alt="">
+                  <p>Rage For Coverage Foundation </p>
+                  <p>8 shades</p>
+                  <p>₹425 MRP <s>₹849</s></p>
+                  <p>₹340</p>
+                  <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                   <button class="btn" onclick="window.location.href='cartPage.html'" >SELECT SHADE</button>
+               </div>
+               <div class="listPartOfDiv">
+                  <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2FAirKissPowderPoweredByImagesArtboard1.jpg%3Fv%3D1644421218&w=256&q=75" alt="">
+                  <p>Air Kiss Powder Lipstick</p>
+                  <p>3 shades</p>
+                  <p>₹250 MRP <s>₹499</s></p>
+                  <p>₹200</p>
+                  <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                   <button class="btn" onclick="window.location.href='cartPage.html'">SELECT SHADE</button>
+               </div>
+               <div class="listPartOfDiv">
+                  <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2FValue-Sets---WBG-Listing_1_9756c528-c984-4323-af6f-4fe3239ee42c.jpg%3Fv%3D1694187870&w=256&q=75" alt="">
+                  <p>Date Night Makeup Due</p>
+                  
+                  <p>₹499 MRP <s>₹648</s></p>
+                  <p>₹399</p>
+   
+                  <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                   <button class="btn" onclick="window.location.href='cartPage.html'">CHOOSE ITEMS</button>
+               </div>
+               <div class="listPartOfDiv">
+                  <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2F537282461-maximeyes-mat-value-set-wbg3.jpg%3Fv%3D1694619990&w=256&q=75" alt="">
+                  <p class="paraDetails">4-in-1 Makeup Set</p>
+                  
+                  <p>₹1099 MRP <s>₹1448</s></p>
+                  <p>₹879</p>
+                  <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+                   <button class="btn" onclick="window.location.href='cartPage.html'">CHOOSE ITEMS</button>
+               </div>
+   
+               
+            </div>
+         </div>
+        </div>
+
+
+        <div class="exclusive">
+         <h4 class="best-sell">NEWLY LAUNCHED</h4>
+         <div class="imageTag">
+            <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2Fb90c025f-22a4-4f30-bfbf-8a045fdf023e.jpg&w=1920&q=75" alt="">
+         </div>
+         
+        </div>
+      
+     <hr>
+
+     <div id="bigger">
+      <h6>READ MORE ABOUT SUGAR COSMETICS  <span> &nbsp;></span></h6>
+      <div class="stage1">
+        <div>
+          <p>LET'S STAY IN TOUCH</p>
+          <p class="get">Get the latest beauty tips straight to your inbox. Can’t wait to connect!</p>
+          <form id="form2">
+            <input type="text" class="ip2" placeholder="Enter Email" />
+            <input type="Submit" value="SUBSCRIBE" />
+          </form>
+        </div>
+
+        
+     <!---- footer ---->
+     <div class="footerTag">
+     <div id="footer">
+      <img src="https://in.sugarcosmetics.com/Footer_sugar_icon.png" alt="" />
+      <div id="media">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-solid fa-envelope"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-pinterest"></i>
+        <i class="fa-brands fa-tumblr"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-twitter"></i>
+
+      </div>
+
+      <hr>
+
+      <div class="stage2">
+        
+         <div class="info">
+           <div>Stores</div>
+           <div>Elite</div>
+           <div>Terms & Conditions</div>
+           <div>Returns</div>
+           <div>FAQs</div>
+           <div>About Us</div>
+         </div>
+       </div>
+       <hr>
+
+       <div class="stage3">
+         <p>GET IN TOUCH</p>
+         <div class="cont">
+           <div>
+             <p>Call us at</p>
+             <p>1800-209-9933</p>
+             <p>Monday to Friday : 09:00 AM-07:00 PM</p>
+             <p>Saturday: 09:00AM-07:00 PM</p>
+           </div>
+           <div>
+             <p>Support</p>
+             <p>hello@sugarcosmetics.com</p>
+           </div>
+           <div>
+             <p>Careers</p>
+             <p>We're hiring!</p>
+           </div>
+           <div>
+             <p>PRESS & MEDIA</p>
+             <p>pr@sugarcosmetics.com</p>
+           </div>
+           <div>
+             <p>INFLUENCER COLLAB</p>
+             <p>JOIN US</p>
+           </div>
+         </div>
+       </div>
      </div>
+     <hr>
+      
+            <div class="stores">
+              <div>
+               <h5>GET THE NEW SUGAR APP TODAY!</h5>
+               <p>Tap into a better shopping experience.</p></div>
+              <img
+                src="https://in.sugarcosmetics.com/playstore.png"
+                alt="error"
+              />
+              <img
+                src="https://in.sugarcosmetics.com/apple-store.png"
+                alt="error"
+              />
+            </div>
+          </div>
+        </div>
+        <hr>
+        
+        
+      <div class="copy">
+        <p>Copyright © 2022 SUGAR Cosmetics. All rights reserved.</p>
+      </div>
+    </div>
+   </div>
     
 </body>
+<script src="scriptJs/index.js"></script>
 </html>
+<script>
+    var cart = document.querySelector("#cart");
+cart.addEventListener('click', function(){
+  window.location.href ="cartPage.html"
+})
+ var wishlist = document.querySelector("#wishlist");
+wishlist.addEventListener('click', function(){
+  window.location.href ="wishlist.html"
+})
+ var discount = document.querySelector("#discount");
+discount.addEventListener('click', function(){
+  window.location.href ="discount.html"
+})
+  
+   var logo = document.querySelector(".logo");
+logo.addEventListener('click', function(){
+  window.location.href ="index.html"
+})
+</script>
