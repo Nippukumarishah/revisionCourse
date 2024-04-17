@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-align: center;
+    cursor: pointer;
+}
+body{
+    background-color: bisque;
+
+}
+#container{
+    margin: 200px auto;
+    background-color: lightblue;
+    width: 25%;
+    height: 180px;
+    border-radius: 10px;
+    
+    
+}
+h2{
+    color: purple;
+    font-size: 40px;
+   
+}
+h2:hover{
+    color: aquamarine;
+}
+#stopwatch{
+    font-size: 35px;
+}
+#stopwatch:hover{
+    color:#fff;
+}
+button{
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: blueviolet;
+    font-size: 19px;
+}
+#stop{
+    background-color: pink;
+}
+#reset{
+    background-color: yellowgreen;
+}
+button:hover{
+    background-color: tan;
+    color: black;
+}
