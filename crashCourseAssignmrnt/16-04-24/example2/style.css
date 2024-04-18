@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: blanchedalmond;
+}
+#container{
+   
+    width: 60%;
+    margin: auto;
+}
+
+h1{
+    font-size: 55px;
+    color: aquamarine;
+}
+label{
+    font-size: 20px;
+    font-weight: 550;
+    color: rgb(250, 135, 168);
+}
+input{
+    background-color: lightblue;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+}
+button{
+    padding: 10px 20px ;
+    cursor: pointer;
+    border: none;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+button:hover{
+    background-color: cadetblue;
+}
+.red{
+    background-color: red;
+    color: white;
+
+}
+.orange{
+    background-color: orange;
+    color: white;
+}
+.pink{
+    background-color: pink;
+    color: white;
+}
