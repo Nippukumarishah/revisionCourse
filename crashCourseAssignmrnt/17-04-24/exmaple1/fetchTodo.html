@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch To-do</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        button{
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 30px;
+        }
+        #fetchId{
+            border: 1.5px dashed green;
+            width: 60%;
+            text-align: center;
+            padding: 10px;
+            margin: 15px auto auto auto;
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        h2{
+            font-size: 20px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="fetchUser" >Fetch ToDos</button>
+        
+    </div>
+</body>
+<script>
+    let container = document.getElementById("container");
+    let btnUser = document.getElementById("fetchUser");
+    
+    btnUser.addEventListener("click", function(){
+        getData();
+    });
+
+    async function getData(){
+        let API_LINK = "https://jsonplaceholder.typicode.com/todos";
+      let res = await fetch(API_LINK);
+      let data = await res.json();
+      console.log(data);
+      showData(data);
+    }
+
+    function showData(data){
+        data.map((ele, index) => {
+            let div = document.createElement("div");
+            div.id = "fetchId"
+            let title = document.createElement("h2");
+            title.innerText = ele.title;
+            
+            
+
+            div.append(title);
+
+            container.append(div);
+
+        })
+    }
+</script>
+</html>
