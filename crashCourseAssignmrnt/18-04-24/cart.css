@@ -1,0 +1,18 @@
+#cont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    margin: auto;
+    gap: 20px;
+  }
+  #cont > div {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #cont > div > img {
+    width: 60px;
+  }
