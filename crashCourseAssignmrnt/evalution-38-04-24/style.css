@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+box-sizing: border-box;
+text-align: center;
+cursor: pointer;
+font-family: "Poppins", sans-serif;
+
+}
+h2{
+font-size: 30px;
+font-weight: 550;
+margin-top: 50px;
+color: darkorchid;
+}
+.allEmployee{
+display: flex;
+justify-content: space-around;
+margin: auto;
+}
+table{
+
+margin: auto;
+width: 80%;
+
+}
+table thead tr th{
+border: 0.5px solid black;
+padding: 6px;
+background-color: grey;
+color: white;
+font-size: 21px;
+font-weight: 500;
+border-radius: 10px;
+
+
+}
+table thead tr th:hover{
+background-color: lightpink;
+color: black;
+font-size: 23px;
+}
+tbody {
+width: 80%;
+margin: auto;
+
+}
+tbody tr td{
+border-radius: 10px;
+background-color: lightblue;
+color: white;
+padding: 5px;
+font-size: 21px;
+font-weight: 500;
+}
+tbody tr td{
+background-color: lightyellow;
+color: black;
+font-size: 23px;
+}
+#prev{
+padding: 8px;
+border: none;
+color: black;
+background-color: blanchedalmond;
+font-size: 21px;
+margin-top: 20px;
+border-radius: 10px;
+}
+#next{
+padding: 8px;
+border: none;
+color: black;
+background-color: turquoise;
+font-size: 21px;
+margin-top: 20px;
+border-radius: 10px;
+}
