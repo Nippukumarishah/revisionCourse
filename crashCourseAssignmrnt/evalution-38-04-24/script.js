@@ -1,95 +1,115 @@
-document.addEventListener("DOMContentLoaded", function() {
-let filterDept = document.getElementById("filter");
+let filterDept = document.getElementById("depFilter");
 let genderFilter = document.getElementById("gender");
-let sortBySalary = document.getElementById("sortBySalary");
-let previous = document.getElementById("prev");
-let pageNo = document.getElementById("page-no");
-let nextPage = document.getElementById("next");
+let sort = document.getElementById("sortBySalary");
+
 let tBody = document.getElementById("emplyee-table-body");
 
 
-let currentPage = 1;
-let limitPage = 10;
-let currentFilterBy = "";
-let currentFilterValue = "";
-let currentSort = "";
-let currentOrder = "";
-
-
-async function fetchNewApi(){
-    const data = await fetchData(currentPage,limitPage,currentFilterBy,currentFilterValue, currentSort, currentOrder);
-    displayData(data);
-    updatePage();
-}
-
-async function fetchData(page,limit,filterBy,filterValue, sort, order){
-   try {
-let res = await fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${page}&limit=${limit}&filterBy=${filterBy}&filterValue=${filterValue}&sort=${sort}&order=${order}`);
+  let currentPage = 1;
+  let flag;
+let totalPages;
+  async function fetchData(URL) {
+    let res = await fetch(URL);
     let data = await res.json();
-    console.log(data)
-   
-    return data;
-   } catch (error) {
-    console.log("error", error);
-   
-   }
-}
+    totalPages=data.totalPages;
+    displayData(data.data);
+  }
 
-function displayData(data){
-tBody.innerHTML = "";
+  fetchData(
+    "https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=1&limit=10"
+  );
 
-data.forEach((ele, i) => {
+  function displayData(arr) {
+    tBody.innerHTML = null;
+    arr.forEach((ele, i) => {
+      let row = document.createElement("tr");
+      let sNo = document.createElement("td");
+      sNo.innerText = i + 1;
+      let name = document.createElement("td");
+      name.innerText = ele.name;
+      let gender = document.createElement("td");
+      gender.innerText = ele.gender;
+      let department = document.createElement("td");
+      department.innerText = ele.department;
+      let salary = document.createElement("td");
+      salary.innerText = ele.salary;
 
-    let row = document.createElement("tr");
-    row.innerHTML =`
-    <td>${index + 1}</td>
-    <td>${ele.name}</td>
-    <td>${ele.gender}</td>
-    <td>${ele.department}</td>
-    <td>${ele.salary}</td>
-    `
-    tBody.append(row);
+      row.append(sNo, name, gender, department, salary);
+
+      tBody.append(row);
+    });
+  }
+
+  // Filter By Department
+
+
+  filterDept.addEventListener("change", () => {
     
-    
-});
+    flag = false;
+    handleDep(filterDept.value);
+  });
+  function handleDep(value) {
+    fetchData(
+      `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${currentPage}&limit=10&filterBy=department&filterValue=${value}&sort=salary&order=${sort.value}`
+    );
+  }
 
-}
-function updatePage(){
-    pageNo.textContent = `Page ${currentPage}`;
-    previous.disabled = currentPage === 1;
-}
+  // Filter By Gender
 
-filterDept.addEventListener("change", function(){
-    currentFilterBy = "department";
-    currentFilterValue = this.value;
-    currentPage = 1;
-    fetchNewApi();
+  genderFilter.addEventListener("change", () => {
 
-});
-genderFilter.addEventListener("change", function(){
-    currentFilterBy = "gender";
-    currentFilterValue = this.value;
-    currentPage = 1;
-    fetchNewApi();
+    flag = true;
+    handleGender(genderFilter.value);
+  });
 
-});
-sortBySalary.addEventListener("change", function(){
-    currentSort = "salary";
-    currentOrder = this.value;
-    currentPage = 1;
-    fetchNewApi();
-});
-previous.addEventListener("click", function(){
-    if(currentPage > 1){
-        currentPage--;
-        fetchNewApi();
+  function handleGender(value) {
+    fetchData(
+      `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${currentPage}&limit=10&filterBy=gender&filterValue=${value}&sort=salary&order=${sort.value}`
+    );
+  }
+
+
+  // Sorting By Salary
+
+  sort.addEventListener("change", () => {
+   
+    handleSort(sort.value);
+  });
+
+  function handleSort(value) {
+    fetchData(
+      `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${currentPage}&limit=10&sort=salary&order=${value}`
+    );
+  }
+
+  let previous = document.getElementById("prev");
+let nextPage = document.getElementById("next");
+
+  nextPage.addEventListener("click", () => {
+    currentPage++;
+
+    if (currentPage <= totalPages && flag == true) {
+      fetchData(
+        `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${currentPage}&limit=10&filterBy=gender&filterValue=${genderFilter.value}&sort=salary&order=${sort.value}`
+      );
+      nextPage.disabled = false;
+      
+    }  else {
+      nextPage.disabled = true;
+     
     }
-});
-nextPage.addEventListener("click", function(){
-    currentPage++
-    fetchNewApi();
+  });
 
-})
-fetchNewApi();
-
-});
+  previous.addEventListener("click", () => {
+    currentPage--;
+    if (currentPage > 0 && flag == true) {
+      fetchData(
+        `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${currentPage}&limit=10&filterBy=gender&filterValue=${genderFilter.value}&sort=salary&order=${sort.value}`
+      );
+      previous.disabled = false;
+     
+    } else {
+      previous.disabled = true;
+      
+    }
+  });

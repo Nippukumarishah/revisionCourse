@@ -7,23 +7,29 @@ cursor: pointer;
 font-family: "Poppins", sans-serif;
 
 }
-h2{
-font-size: 30px;
-font-weight: 550;
-margin-top: 50px;
-color: darkorchid;
-}
-.allEmployee{
-display: flex;
-justify-content: space-around;
-margin: auto;
-}
-table{
-
-margin: auto;
-width: 80%;
-
-}
+      h2 {
+        font-size: 30px;
+        font-weight: 550;
+        margin-top: 50px;
+        color: darkorchid;
+      }
+     
+      .allEmployee{
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        align-items: center;
+      }
+      table {
+        width: 85%;
+        font-size: 20px;
+        margin: auto;
+        margin-top: 20px;
+        
+      }
+      tr {
+        height: 40px;
+      }
 table thead tr th{
 border: 0.5px solid black;
 padding: 6px;
@@ -35,26 +41,9 @@ border-radius: 10px;
 
 
 }
+
 table thead tr th:hover{
 background-color: lightpink;
-color: black;
-font-size: 23px;
-}
-tbody {
-width: 80%;
-margin: auto;
-
-}
-tbody tr td{
-border-radius: 10px;
-background-color: lightblue;
-color: white;
-padding: 5px;
-font-size: 21px;
-font-weight: 500;
-}
-tbody tr td{
-background-color: lightyellow;
 color: black;
 font-size: 23px;
 }
