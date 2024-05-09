@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+            cursor: pointer;
+           
+        }
+        h1{
+            font-size: 30px;
+            margin: 20px;
+            color: burlywood;
+        }
+        input{
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+        input:hover{
+            background-color: aquamarine;
+        }
+        .user-list{
+            display: grid;
+            margin: 30px auto;
+            border: 1px solid greenyellow;
+            grid-template-columns: repeat(3, 1fr);
+            width: 85%;
+        }
+        .user-profile{
+            margin: 15px;
+            padding: 5px;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+    let rootEle = document.getElementById("root");
+
+    const {useState, useEffect} = React
+
+    const UserCard =({user}) =>{
+        
+        return(
+            <div className="user-profile">
+                <img src={user.avatar} alt="" />
+                <div>
+                    <h2>{user.first_name} {user.last_name}</h2>
+                    <p>Email: {user.email}</p>
+                    </div>
+                </div>
+        )
+    }
+
+
+    function UserProfile(){
+        const [users, setUsers]= useState([]);
+        const [search, setSearch] = useState("");
+
+        useEffect(()=>{
+            fetchUsers();
+        },[])
+
+        const fetchUsers = async() =>{
+
+            try {
+               const response = await axios.get("https://reqres.in/api/users");
+               
+               setUsers(response.data.data)
+               console.log(response.data.data) 
+            } catch (error) {
+                console.log("error", error)
+            }
+            
+
+        }
+
+        const handleSearch =(e)=>{
+            setSearch(e.target.value)
+        }
+        const filteredUsers = users.filter((user)=> user.first_name.toLowerCase().includes(search.toLowerCase()))
+
+   
+        return(
+            <div>
+                <h1>User Profile</h1>
+                <input type="text" name="" value={search} onChange={handleSearch}/>
+            <div className="user-list">
+                {filteredUsers.map((user)=>(
+                    <UserCard key={user.id} user={user}/>
+
+                ))}
+                </div>
+                
+                </div>
+        )
+    }
+
+    ReactDOM.createRoot(rootEle).render(<UserProfile />)
+  </script>
+</html>
