@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <style>
+
+      *{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        cursor: pointer;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      div{
+        background-color: lightblue;
+        height: 729px;
+      }
+      h2{
+        font-size: 40px;
+        color: rgb(255, 127, 219);
+      }
+      #inp{
+        padding: 7px;
+        margin: 10px;
+        width: 300px;
+        border-radius: 10px;
+        background-color: lightgoldenrodyellow;
+        font-size: 17px;
+      }
+      .btn{
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+        background-color: yellowgreen;
+        border: none;
+      }
+      #inp:hover,
+      .btn:hover{
+        background-color: aquamarine;
+      }
+      ul{
+       
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(162, 27, 27, 0.09) 0px -3px 5px;
+       width: 400px;
+       margin: 20px auto;
+      }
+      li{
+        text-decoration: none;
+        margin: 10px;
+      }
+      span{
+        font-size: 20px;
+
+      }
+      #btn1{
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+        border: none;
+        background-color: blueviolet;
+        color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    let rootElement = document.getElementById("root");
+    
+    function TodoList(){
+        const [todos, setTodos] = React.useState([]);
+        const [newTodo, setNewTodo] = React.useState("");
+
+
+        const addTodo =() =>{
+            setTodos(prevValue => [...prevValue, {id: Date.now(), text: newTodo, completed: false}])
+        setNewTodo("")
+        }
+
+        const toggleTodo =(id)=>{
+            setTodos(prevTodos => 
+            prevTodos.map(todo=>
+            todo.id === id ? {...todo, completed: !todo.completed}: todo))
+        }
+
+        const removeTodo =(id) =>{
+            setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id))
+        }
+        console.log(todos)
+
+
+        return(
+            <>
+            <h2>ToDo List</h2>
+            <input id="inp"type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)}/>
+            <button className="btn" onClick={addTodo}>Add Todo</button>
+
+
+            <ul>
+                {todos.map((todo, index) => (
+                    <li key={index}>
+                        <input id="inp1" type="checkbox" checked={todo.completed} onChange={()=>toggleTodo(todo.id)}/>
+                        <span>{todo.text}</span>
+                        <button id="btn1" onClick={()=> removeTodo(todo.id)}>Delete</button>
+                        </li>
+                ))}
+                </ul>
+
+        
+            </>
+        )
+    }
+
+
+
+    ReactDOM.createRoot(rootElement).render(<TodoList />)
+  </script>
+</html>

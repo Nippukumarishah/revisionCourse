@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    const rootElement = document.getElementById("root")
+
+    function Quiz (){
+        const questions = [
+        {
+      question: "What is the capital of France?",
+      options: ["Paris", "London", "Berlin", "Rome"],
+      correctAnswer: "Paris"
+    },
+    {
+      question: "What is 2 + 2?",
+      options: ["3", "4", "5", "6"],
+      correctAnswer: "4"
+    },
+    {
+      question: "Who wrote 'Romeo and Juliet'?",
+      options: ["Shakespeare", "Hemingway", "Tolkien", "Austen"],
+      correctAnswer: "Shakespeare"
+    },
+    {
+      question: "What is the capital of France?",
+      options: ["Paris", "London", "Berlin", "Rome"],
+      correctAnswer: "Paris"
+    },
+    {
+      question: "What is 2 + 2?",
+      options: ["3", "4", "5", "6"],
+      correctAnswer: "4"
+    },
+    {
+      question: "Who wrote 'Romeo and Juliet'?",
+      options: ["Shakespeare", "Hemingway", "Tolkien", "Austen"],
+      correctAnswer: "Shakespeare"
+    }
+        ];
+
+
+        const [selectAns, setSelectAns] = React.useState(new Array(questions.length).fill(''));
+        const [score, setScore] = React.useState(0);
+        const [showScore, setShowScore] = React.useState(false);
+
+
+        function handleChange(index, event){
+            const updateAns = [...selectAns];
+            updateAns[index] = event.target.value;
+            setSelectAns(updateAns);
+        }
+
+        function handleSubmit(e){
+            e.preventDefault();
+            let calScore =0;
+            selectAns.forEach((ans,i) =>{
+                if(ans === questions[index].correctAns){
+                    calScore++;
+                }
+            });
+            setScore(calScore);
+            setShowScore(true);
+        }
+
+
+
+        return (
+            <>
+            <h2>hello</h2>
+            </>
+        )
+    }
+
+    ReactDOM.createRoot(rootElement).render(<Quiz />)
+  </script>
+</html>
