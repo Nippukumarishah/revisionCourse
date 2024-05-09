@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <style>
+        *{
+            font-family: "Poppins", sans-serif;
+        }
+        #container{
+            display: flex;
+            width: 80%;
+            margin: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        #inp{
+            padding: 10px;
+            font-size: 25px;
+            border-radius: 10px;
+            border: 1px solid lightpink;
+            outline: 0;
+        }
+        #color{
+            height: 380px;
+            width: 550px;
+            border-radius: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    let rootEle = document.getElementById("root");
+
+    function ColorPicker(){
+        const [color, setColor]= React.useState([]);
+        
+
+        function handleColPicker(e){
+            setColor(e.target.value)
+
+        }
+       
+
+        let handleBackColor ={
+            backgroundColor: color
+        }
+        if(color.length>7){
+            alert("Invalid Hex code");
+            setColor("");
+        }else{
+
+
+        return(
+            <div id="container">
+            <h2>Interactive Color Finder</h2>
+            <input type="text" value={color} placeholder="Enter the color Hex" onChange={handleColPicker} id="inp" />
+            
+            <div id="color" style={handleBackColor}>
+                
+                </div>
+            </div>
+        )
+        }
+    }
+
+
+    ReactDOM.createRoot(rootEle).render(<ColorPicker />)
+  </script>
+</html>
