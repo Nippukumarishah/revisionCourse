@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDO list in React</title>
+  <style>
+    body{
+      margin: auto;
+      width: 500px;
+    }
+  </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Code goes here
+    const AddToDo = ({addTodo}) => {
+      const [task, setTask] = React.useState("");
+      const handleInputChange = (e) => {
+        setTask(e.target.value);
+      }
+      const handleAddTodo = () => {
+        if(task.trim()!== ""){
+          addTodo(task);
+          setTask("");
+        }
+      }
+      return (
+        <>
+        <input type="text" value={task} onChange={handleInputChange} />
+        <button onClick={handleAddTodo}>Add Todo</button>
+        </>
+      )
+    }
+    const TodoList = ({todos, deleteTodo, toggleCompleted}) => {
+      return (
+        <ul>
+        {todos.map((todo) =>(
+          <li key={todo.id}>
+          <span style ={{textDecoration: todo.completed ? 'line-through' : 'none' }}>{todo.text}</span>
+          <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+          <button onClick={() => toggleCompleted(todo.id)}>Toggle Completed</button>
+          </li>
+        ))}
+        </ul>
+      )
+    }
+    const TodoApp = () => {
+      const [todos, setTodos] = React.useState([]);
+      const addTodo = (text) =>{
+        setTodos([...todos, {id: Date.now(), text, completed: false }]);
+      };
+      const deleteTodo = (id) => {
+        setTodos(todos.filler((todo) => todo.id !== id));
+      };
+      const toggleCompleted = (id) => {
+        setTodos(
+          todos.map((todo) => 
+          todo.id === id ? { ...todo, completed: !todo.completed } : todo 
+          )
+          );
+      };
+      return (
+        <>
+        <h2>Todo List </h2>
+        <AddToDo addTodo={addTodo} />
+        <TodoList todos={todos} deleteTodo={deleteTodo} toggleCompleted= {toggleCompleted} />
+        </>
+      )
+    }
+    const reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+    reactRoot.render(<TodoApp />);
+  </script>
+</html>
