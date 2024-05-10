@@ -1,23 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
-  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React Quiz App</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      cursor: pointer;
+    }
+    body{
+      background-color: lightgoldenrodyellow;
+    }
+    #quiz{
+      max-width: 400px;
+         margin: 20px auto; 
+         padding: 15px;
+         background-color: #a9c9c8 ; 
+         border-radius: 10px;
+         box-shadow:rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(160, 206, 8, 0.35) 0px -2px 6px 0px inset;
+    }
+    h2{
+      text-align: center;
+      color: rgb(205, 50, 68);
+      font-size: 40px;
+      margin:0  16px;
+    }
+    h2:hover{
+      color: blueviolet;
+    }
+    .quest{
+      margin-bottom: 18px;
+    }
+    ul{
+   list-style-type: none;
+    padding: 0;
+    }
+    li{
+      margin-bottom: 18px;
+    }
+    button{
+    background-color: #b07777;
+     color: #fff; 
+     border: none; 
+     padding: 10px 20px; 
+     border-radius: 4px; 
+
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
   <script type="text/babel">
-    // Your  code will go here
-    const rootElement = document.getElementById("root")
+    const { useState } = React;
 
-    function Quiz (){
-        const questions = [
-        {
+    function Quiz() {
+      const questions = [
+      {
       question: "What is the capital of France?",
       options: ["Paris", "London", "Berlin", "Rome"],
       correctAnswer: "Paris"
@@ -32,56 +80,74 @@
       options: ["Shakespeare", "Hemingway", "Tolkien", "Austen"],
       correctAnswer: "Shakespeare"
     },
-    {
-      question: "What is the capital of France?",
-      options: ["Paris", "London", "Berlin", "Rome"],
-      correctAnswer: "Paris"
-    },
-    {
-      question: "What is 2 + 2?",
-      options: ["3", "4", "5", "6"],
-      correctAnswer: "4"
-    },
-    {
-      question: "Who wrote 'Romeo and Juliet'?",
-      options: ["Shakespeare", "Hemingway", "Tolkien", "Austen"],
-      correctAnswer: "Shakespeare"
-    }
-        ];
+    
+     ];
 
+      const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+      const [showScore, setShowScore] = useState(false);
+      const [score, setScore] = useState(0);
 
-        const [selectAns, setSelectAns] = React.useState(new Array(questions.length).fill(''));
-        const [score, setScore] = React.useState(0);
-        const [showScore, setShowScore] = React.useState(false);
+      const handleAnswerClick = (index, selectedOption) => {
+        const newAnswers = [...answers];
+        newAnswers[index] = selectedOption;
+        setAnswers(newAnswers);
+      };
 
-
-        function handleChange(index, event){
-            const updateAns = [...selectAns];
-            updateAns[index] = event.target.value;
-            setSelectAns(updateAns);
+      const calculateScore = () => {
+        let calScore = 0;
+        for (let i = 0; i < questions.length; i++) {
+          if (answers[i] === questions[i].correctAnswer) {
+            calScore++;
+          }
         }
+        setScore(calScore);
+        setShowScore(true);
+      };
 
-        function handleSubmit(e){
-            e.preventDefault();
-            let calScore =0;
-            selectAns.forEach((ans,i) =>{
-                if(ans === questions[index].correctAns){
-                    calScore++;
-                }
-            });
-            setScore(calScore);
-            setShowScore(true);
-        }
+      const restartQuiz = () => {
+        setAnswers(Array(questions.length).fill(null));
+        setShowScore(false);
+        setScore(0);
+      };
 
-
-
-        return (
-            <>
-            <h2>hello</h2>
-            </>
-        )
+      return (
+        <div id="quiz">
+        <h2>QUIZ </h2>
+          {!showScore ? (
+            <div>
+              {questions.map((question, index) => (
+                <div className="quest" key={index} >
+                  <h3>{question.question}</h3>
+                  <ul>
+                    {question.options.map((option, optionIndex) => (
+                      <li key={optionIndex} >
+                        <label>
+                          <input
+                            type="radio"
+                            name={`question${index}`}
+                            value={option}
+                            onChange={() => handleAnswerClick(index, option)}
+                          />
+                          {option}
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <button onClick={calculateScore} >Submit</button>
+            </div>
+          ) : (
+            <div style={{ marginTop: "20px" }}>
+              <h2>Your Score: {score}</h2>
+              <button onClick={restartQuiz} >Restart Quiz</button>
+            </div>
+          )}
+        </div>
+      );
     }
 
-    ReactDOM.createRoot(rootElement).render(<Quiz />)
+    ReactDOM.render(<Quiz />, document.getElementById("root"));
   </script>
+</body>
 </html>
