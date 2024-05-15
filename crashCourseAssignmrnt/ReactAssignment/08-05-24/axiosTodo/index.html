@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms in React with Server Interaction</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            cursor: pointer;
+            font-family: sans-serif;
+        }
+        input{
+          padding: 7px;
+          margin: 7px;
+          border-radius: 10px;
+          background-color: lightyellow;
+          font-size: 22px;
+
+
+        }
+        input:hover{
+          background-color: yellowgreen;
+          color: white;
+        }
+        button{
+          padding:8px;
+          margin: 10px;
+          border-radius: 10px;
+          background-color: tomato;
+          border: none;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/babel">
+
+
+
+      function TaskManager() {
+        const [inputData, setInputData] = React.useState("");
+        const [data, setData] = React.useState([])
+
+
+        function getData(){
+          axios.get("http://localhost:3000/todos")
+          .then((res) => setData(res.data))
+          .catch((err) => console.log(err))
+        }
+        getData()
+        function handleAddTask(){
+          let task = {title:inputData, status:false}
+          console.log(task)
+          axios
+          .post("http://localhost:3000/todos",task)
+          .then(() =>console.log("task added"))
+          .catch(() => console.log("failed the task"))
+        }
+
+        function handleChange(ele,i){
+
+          axios
+          .patch(`http://localhost:3000/todos/${ele.id}`,
+            {...ele, status: !ele.status})
+            .then(()=> console.log("Task update"))
+            .catch(() => console.log(err))
+          
+        }
+        function handleDelete(ele, i){
+          axios
+          .delete(`http://localhost:3000/todos/${ele.id}`)
+          .then(() => console.log("task deleted"))
+          .catch((err)=> console.log(err))
+        }
+
+        function handleFilter(e){
+          e.preventDefault()
+          const status = e.target.value;
+          axios
+          .get(`http://localhost:3000/todos?status=${status}`)
+          .then((res) =>setData(res.data))
+          .catch((err) => console.log(err));
+        }        
+
+       return(
+        <div>
+          
+          <div>
+            <input type="text" placeholder="Enter Task" 
+            onChange={(e)=>setInputData(e.target.value)}
+            value={inputData} />
+            <select onChange={(e)=>handleFilter(e)}>
+            <option value="">--Filter to value--</option>
+            <option value="true">Completed</option>
+            <option value="false">Pending</option>
+            </select>
+            <button onClick={handleAddTask}>Add Task</button>
+            </div>
+           <div>
+            {data.map((ele, i) => (
+              
+              <li key={i}>{ele.title}
+            <span onClick={() =>handleChange(ele,i)}>{" "} Status: {ele.status ? "completed" : "pending"}{" "}</span> {" "}
+             <button onClick={(e)=>handleDelete(ele,i)}>DELETE</button>
+              </li> 
+            ))}
+
+              
+            </div>
+          </div>
+       )
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<TaskManager />);
+    </script>
+  </body>
+</html>
+ 
