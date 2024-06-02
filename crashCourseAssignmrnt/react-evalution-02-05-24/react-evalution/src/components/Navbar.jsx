@@ -1,9 +1,10 @@
 import { Box, Button, Flex, Text } from '@chakra-ui/react'
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from "../context/AuthContextProvider"
 
 const Navbar = () => {
+    
     const {isAuthenticated, email, login} = useContext(AuthContext);
   return (
    <Box bg="gray.400" p={3} color="white">
@@ -12,7 +13,7 @@ const Navbar = () => {
             <>
            <Text>{email}</Text>
         <Flex>
-        <Link to="/">Home</Link>
+        
             <Button bg="teal.300"colorScheme='gray.300' onClick={login}>Logout</Button> 
             
         </Flex> 
@@ -21,7 +22,7 @@ const Navbar = () => {
         
         )}
      
-     
+     <Link to="/">Home</Link>
        
     
      </Flex >

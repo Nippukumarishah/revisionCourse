@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../context/AuthContextProvider'
+import { Box } from '@chakra-ui/react';
+import { Navigate } from 'react-router-dom';
 
-const PrivateRoute = () => {
+const PrivateRoute = ({ children }) => {
+    const { authState } = useContext(AuthContext);
   return (
-    <div>
-      
-    </div>
+    <Box>
+        { authState ? children : <Navigate to="/login" />}
+    </Box>
+   
   )
 }
 
